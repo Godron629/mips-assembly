@@ -3,20 +3,8 @@
 # Input an array, find min and max values, then output 
 
 .data
-  prompt_input_size: .asciiz "Please enter the size of the list: " 
-  prompt_input_value: .asciiz "Please enter the element\n"
 	
-  the_list_is_string: .asciiz "\nThe list is "
-  the_max_is_string: .asciiz "\nThe Max is "
-  the_min_is_string: .asciiz "\nThe Min is "
-  space: .asciiz " "
-	
-  list_length: .word 0 
-  list: .space 100 
-
-.text
-
-.macro print_str(%str)
+	.macro print_str(%str)
   # :param %str addr: Address of .asciiz 
   li $v0, 4 					
   la $a0, %str 			
@@ -46,6 +34,19 @@
   # :param %amount: Amount to increase %x by
   addi %x, %x, %amount
 .end_macro 
+
+  prompt_input_size: .asciiz "Please enter the size of the list: " 
+  prompt_input_value: .asciiz "Please enter the element\n"
+	
+  the_list_is_string: .asciiz "\nThe list is "
+  the_max_is_string: .asciiz "\nThe Max is "
+  the_min_is_string: .asciiz "\nThe Min is "
+  space: .asciiz " "
+	
+  list_length: .word 0 
+  list: .space 100 
+
+.text
 
 main: 
   #

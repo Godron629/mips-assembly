@@ -4,16 +4,16 @@
 
 .data
   	prompt_n_value: .asciiz "\nEnter a number (0, 12): " 
-  	invalid_input_str: .asciiz "\nError - Invalid Input: Must be (0 < N < 12)"
+  	invalid_input_str: .asciiz "\nError - Invalid Input: Must be (0 < N < 12"
 	factorial_result_str: .asciiz "\nThe factorial result is: "
 	
 .text
 
 .macro print_str(%str)
-  # :param %str addr: Address of .asciiz 
-  li $v0, 4 					
-  la $a0, %str 			
-  syscall
+	# :param %str addr: Address of .asciiz 
+  	li $v0, 4 					
+  	la $a0, %str 			
+  	syscall
 .end_macro
 
 .macro print_int(%int)
