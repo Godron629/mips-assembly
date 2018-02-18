@@ -38,12 +38,6 @@
   	syscall
 .end_macro
 
-.macro increase_by(%x, %amount)
-  	# :param %x reg: Register with numeric value
- 	# :param %amount: Amount to increase %x by
-  	addi %x, %x, %amount
-.end_macro 
-
 .text 
 
 main: 
